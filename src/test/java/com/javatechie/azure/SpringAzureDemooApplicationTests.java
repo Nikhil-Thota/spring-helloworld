@@ -1,13 +1,21 @@
 package com.javatechie.azure;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+@RestController
+@SpringBootApplication
+public class SpringAzureDemooApplication {
 
-@SpringBootTest
-class SpringAzureDemooApplicationTests {
-
-	@Test
-	void contextLoads() {
+	public static void main(String[] args) {
+		SpringApplication.run(SpringAzureDemooApplication.class, args);
 	}
+	
+	@GetMapping("/message")
+	public String message() {
+		return "Hello World from azure";
+	}
+	
 
 }
